@@ -7,7 +7,7 @@
                 <h2>Fake API</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-success" href="<?php echo e(route('user.create')); ?>"> Create</a>
+                <a class="btn btn-success" href="<?php echo e(route('users.create')); ?>"> Create</a>
             </div>
         </div>
     </div>
@@ -35,11 +35,11 @@
         <td><?php echo e($user['firstName']); ?></td>
         <td><?php echo e($user['lastName']); ?></td>
         <td align="center">
-            <form method="POST" action="<?php echo e('user/'.$user['id']); ?>">
+            <form method="POST" action="<?php echo e('users/'.$user['id']); ?>">
                 <?php echo method_field('DELETE'); ?>
                 <?php echo csrf_field(); ?>
 
-                <a href="<?php echo e('user/'.$user['id']); ?>" class="text-primary"><i class="fa fa-fw fa-edit"></i> Edit</a> |
+                <a href="<?php echo e('users/'.$user['id']); ?>" class="text-primary"><i class="fa fa-fw fa-edit"></i> Edit</a> |
                 <button type="submit" class="text-danger btn btn-link" onClick="return confirm('Are you sure to delete this user?');"><i class="fa fa-fw fa-trash"></i> Delete</button>
              </form>
         </td>

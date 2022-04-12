@@ -43,6 +43,7 @@ class UserController extends Controller
                 $payload = [
             'firstName' => $request->input('nama_depan'),
             'lastName' => $request->input('nama_belakang'),
+            'email' => $request->input('email'),
         ];
 
         $baseApi = new BaseApi;
@@ -76,7 +77,7 @@ class UserController extends Controller
             'Data berhasil disimpan',
         );
 
-        return redirect()->back();
+        return redirect('users');
     }
 
     /**
@@ -148,7 +149,7 @@ class UserController extends Controller
         'Data berhasil disimpan',
     );
 
-    return redirect('user');
+    return redirect('users');
     }
 
     /**
@@ -167,7 +168,7 @@ class UserController extends Controller
                 'Data gagal dihapus'
             );
 
-            return redirect('user');
+            return redirect('users');
         }
 
         $request->session()->flash(
@@ -175,6 +176,6 @@ class UserController extends Controller
             'Data berhasil dihapus',
         );
 
-        return redirect('user');
+        return redirect('users');
     }
 }
